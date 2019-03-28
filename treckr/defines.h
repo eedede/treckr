@@ -1,0 +1,42 @@
+void reset_sync(void);
+void clear_sector_list( void);
+bool are_all_sectors_read( void);
+bool is_sector_new( byte);
+bool update_sector_list( byte);
+void store_current_sector_id( byte );
+byte retrieve_current_sector_id(void);
+bool check_for_address_field_pattern( byte );
+bool decode_data_field( byte );
+void read_signal_handler( byte );
+void drive_on( void);
+void drive_off( void);
+void _exit( void);
+byte get_host_command( void);
+void reset_track_motor( void);
+byte get_current_hw_track_no( void);
+void set_current_hw_track_no( byte);
+void increase_current_hw_track_no( void);
+void decrease_current_hw_track_no( void);
+bool is_track_number_valid( void);
+void reset_hw_track_no( void);
+void clear_hw_track_no( void);
+bool is_min_track_reached( void);
+bool is_max_track_reached( void);
+void pull_step_motor_to_track_0( void);
+byte increase_track( void);
+byte decrease_track( void);
+void hw_increase_track( byte, byte, byte);
+void hw_decrease_track( byte, byte, byte);
+byte set_track( byte track_no);
+void init_hw_drive_state( void);
+bool is_drive_enabled( void);
+void hw_delay_us( word);
+void track_motor_all_phases_off();
+void reset_hw_drive_state( void);
+void capture_track( void);
+void test_serial( void);
+void init_DELAY_default(void);
+void set_DELAY_slow(void);
+
+#define OK (0)
+#define ERROR (0xFF)
