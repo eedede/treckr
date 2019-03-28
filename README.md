@@ -25,17 +25,18 @@ To be able to read DOS 3.3 disks and store them on a PC host via USB, the follow
 
 - The Arduino board PIN configuration is as follows:
 
-  [PIN 2:  drive read signal]
-  [PIN 22: drive write request (discriminate read/write)]
-  [PIN 24: drive on/off]
-  [PIN 34: enable/disable step motor phase 0]
-  [PIN 35: enable/disable step motor phase 1]
-  [PIN 36: enable/disable step motor phase 2]
-  [PIN 37: enable/disable step motor phase 3]
+ - PIN 2:  drive read signal
+ - PIN 22: drive write request (discriminate read/write)
+ - PIN 24: drive on/off
+ - PIN 34: enable/disable step motor phase 0
+ - PIN 35: enable/disable step motor phase 1
+ - PIN 36: enable/disable step motor phase 2
+ - PIN 37: enable/disable step motor phase 3
   
-  This PIN configuration can be changed in the Arduino SW if needed.
+ This PIN configuration can be changed in the Arduino SW if needed.
   
-1) Power supply. The following choices are suggested:
+Power supply. The following choices are suggested:
+
 a) use original Apple II computer (or clone) power supply. 
    The required voltages can be obtained from one of the two pin headers of the disk interface card.
    Pay attention to the pin header pin-out. Check the signals with a multimeter.
