@@ -1,5 +1,5 @@
 # treckr
-Retro tool to read Apple II formatted DOS 3.3 disk content and store them on a host PC
+Retro tool to read Apple II formatted DOS 3.3 disk content and store it on a host PC
 
 ------------------------------------------------------------------------------------------------------------------------------
 
