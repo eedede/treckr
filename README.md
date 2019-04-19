@@ -45,10 +45,10 @@ The Arduino board PIN configuration is as follows:
 ## Disk drive power supply  
 The following choices are suggested:
 
-a) use original Apple II computer (or clone) power supply. 
+- use original Apple II computer (or clone) power supply. 
    The required voltages can be obtained from one of the two pin headers of the disk interface card.
    Pay attention to the pin header pin-out. Check the signals with a multimeter.
-b) use/develop [custom power supply](schematic/treckr_schematic.pdf). The required voltages are: +12V, -12V and +5V. 
+- use/develop [custom power supply](schematic/treckr_schematic.pdf). The required voltages are: +12V, -12V and +5V. 
    
 For prototyping, option b) was used. A standard power supply (18W) providing 15V DC output has been chosen. 
 The +12V and +5V rails can be generated easily using 7812 and 7805 voltage regulators and additional capacitors for input/output. 
