@@ -13,7 +13,7 @@ Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega256
 ## Which equipment is needed?
 To be able to read DOS 3.3 disks and store them on a PC host via USB, the following equipment is needed:
 - Apple DISK II drive (or compatible - during development Teac FD-55A was used) with 140/160KB storage capacity
-- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C++](treckr/) files need to be installed here.
+- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C](treckr/) files need to be installed here.
 - Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
 - Host PC with Arduino IDE and python 3.5
 
