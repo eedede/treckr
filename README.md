@@ -18,7 +18,7 @@ To be able to read DOS 3.3 disks and store them on a PC host via USB, the follow
 - Host PC with Arduino IDE and python 3.5 installed
 
 ## How are the HW components connected to each other?
-For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply. The overall HW tool kit used during development is shown [here](schematic/treckr_hw_pic.jpeg).
+For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply. The overall HW tool kit used during development is shown [here](schematic/treckr_hw_pic.jpg).
 
 Required wiring between Arduino and disk drive: 
 - 4 wires for track motor control (driven by Arduino)
