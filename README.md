@@ -17,7 +17,7 @@ To be able to read DOS 3.3 disks and store them on a PC host via USB, the follow
 - Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
 
 ## How are the HW components connected to each other?
-For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic] using a custom power supply(schematic/treckr_schematic.pdf)
+For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply.
 
 Required wiring between Arduino and disk drive: 
 - 4 wires for track motor control (driven by Arduino)
