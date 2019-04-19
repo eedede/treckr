@@ -13,8 +13,9 @@ Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega256
 ## Which equipment is needed?
 To be able to read DOS 3.3 disks and store them on a PC host via USB, the following equipment is needed:
 - Apple DISK II drive (or compatible - during development Teac FD-55A was used) with 140/160KB storage capacity
-- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560
+- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C++](treckr/) files need to be installed here.
 - Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
+- Host PC with Arduino IDE and python 3.5
 
 ## How are the HW components connected to each other?
 For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply.
@@ -27,7 +28,7 @@ Required wiring between Arduino and disk drive:
 Note that Arduino Mega328 is **not** supported since treckr SW running on Arduino requires 8KB of onchip RAM 
 
 PC interfacing with Arduino via USB. PC needs to support Python 3.5. Only W10 has been tested, but other OS should work as well.
-- SW: treckr.py python 3.5 script and arduino SW files
+- SW: [treckr.py](treckr.py) python 3.5 script and arduino SW files
 
 ## Arduino PIN configuration
 The Arduino board PIN configuration is as follows:
