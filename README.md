@@ -58,10 +58,9 @@ Two addditional 10uF capacitors are required for the charge pump.
 The 12V rail needs to be connected to the Arduino board as well.
 
 NOTE: Before enabling the power supply to the drive and connecting the drive control signals to the Arduino board, check the wiring.
-      Verify your understanding of the pinout of the 20-pin disk drive connector. 
       Info can be found in online Apple-2 material, also see below hints for literature.
-      !Incorrect wiring may damage the drive, disk content, Arduino board, host, (and Apple II if used as power supply)!
-      Treckr is not designed to modify the disk content. However, it is strongly recommended to write protect disks before
+      **Incorrect wiring may damage your Hardware!**
+      Please note treckr is not designed to modify the disk content. However, it is strongly recommended to write protect disks before
       inserting them in the drive.
 
 ## Software Description
