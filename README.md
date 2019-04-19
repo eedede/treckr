@@ -85,18 +85,18 @@ The general concept of treckr is shortly described as follows:
   It stays e.g. disabled if only the serial connection to the Arduino board shall be tested.
   
 - To scan the disks, the following approach is recommended:
-  1) use 'q' quick scan option to quickly identify if the disk is readable and if it is DOS 3.3 formatted
-  2) DOS 3.3 formatted disks can then be read and stored using the 'c' option. 
-     The content of the disk (35 or 40 tracks) is stored as a single file on the host file system.
-     Each DOS 3.3 track consists of 16 sectors with 256 data bytes. The number of tracks is obtained from the VTOC info in track 17.
-     Multiple disk read attempts will be tried if sectors cannot be decoded correctly.
-     In case of read errors, the corrupt sectors are replaced by 256 zero bytes. Information on replaced sectors is stored in a dedicated file.
-  3) Using 'd' command, it is possible to show the disk table of contents in original format on the screen. Nice feature :-)
-  4) Non-DOS 3.3 formatted disks may be stored using the raw 'r' option. Note that in this case only one read attempt is done as the host 
+   - use 'q' to quickly identify if the disk is readable and if it is DOS 3.3 formatted
+   - use 'c' to read and store DOS 3.3 formatted disks 
+   
+   The content of the disk (35 or 40 tracks) is stored as a single file on the host file system.  The output is stored in binary (.bin)     files containing 35 or 40 tracks. Those may be processed by Apple II SW emulators.
+   Each DOS 3.3 track consists of 16 sectors with 256 data bytes. The number of tracks is obtained from the VTOC info in track 17.
+   Multiple disk read attempts will be tried if sectors cannot be decoded correctly.
+   In case of read errors, the corrupt sectors are replaced by 256 zero bytes. Information on replaced sectors is stored in a dedicated file.
+   - use 'd' to show the disk table of contents in original format on the screen. Nice feature :-)
+   - use 'r' (raw) to store non-DOS 3.3 formatted disks. Note that in this case only one read attempt is done as the host 
      does not search for any byte pattern. You may use this function to investigate if a disk possibly contains non-DOS information. 
-  5) The output is stored in binary (.bin) files containing 35 or 40 tracks. Those may be processed by Apple II SW emulators.
-  6) A dedicated command option 'g' allows to parse the directory of all .bin files and 
-     produce a single file containing the table of contents for each of them.
+  
+   - use 'g' to parse all .bin files on your host directory and generate a single file containing the table of contents for each of them.
   
   Enjoy reading your old disks and boot them in an emulator! There may be some very nice stuff to be digged out :-)
   
