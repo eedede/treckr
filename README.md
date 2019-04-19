@@ -15,7 +15,7 @@ To be able to read DOS 3.3 disks and store them on a PC host via USB, the follow
 - Apple DISK II drive (or compatible - during development Teac FD-55A was used) with 140/160KB storage capacity
 - Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C](treckr/) files need to be installed here.
 - Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
-- Host PC with Arduino IDE and python 3.5
+- Host PC with Arduino IDE and python 3.5 installed
 
 ## How are the HW components connected to each other?
 For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply.
@@ -27,8 +27,7 @@ Required wiring between Arduino and disk drive:
 - 1 wire for disk read signal (driven by disk drive)
 Note that Arduino Mega328 is **not** supported since treckr SW running on Arduino requires 8KB of onchip RAM 
 
-PC interfacing with Arduino via USB. PC needs to support Python 3.5. Only W10 has been tested, but other OS should work as well.
-- SW: [treckr.py](treckr.py) python 3.5 script and arduino SW files
+The host PC is interfacing with Arduino via USB. PC needs to support Python 3.5. Only W10 has been tested, but other OS should work as well.
 
 ## Arduino PIN configuration
 The Arduino board PIN configuration is as follows:
@@ -78,7 +77,7 @@ The general concept of treckr is shortly described as follows:
   The Arduino SW does not analyze the track content, nor does it apply any bit filtering. 
   DOS 3.3 sector search and data field extraction are done on the host using the python sript.
   
-- The PC host runs a python program to control the Arduino. The tool is command based. 
+- The PC host runs a python program [treckr.py](treckr.py) to control the Arduino. The tool is command based. 
   You need to update the global variable "SERIAL_PORT" to refer to the desired USB connection.
   Arduino and host use a 500k baud rate.
   The host ensures that the disk drive is only powered on during a read sequence.
