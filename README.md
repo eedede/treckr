@@ -1,5 +1,5 @@
 # treckr
-Retro tool to read Apple II formatted DOS 3.3 disk content and store it on a host PC
+Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega2560 and store it on a host PC
 
 ------------------------------------------------------------------------------------------------------------------------------
 
@@ -10,20 +10,27 @@ Retro tool to read Apple II formatted DOS 3.3 disk content and store it on a hos
 
 ------------------------------------------------------------------------------------------------------------------------------
 
+## Which eqipment is needed?
 To be able to read DOS 3.3 disks and store them on a PC host via USB, the following equipment is needed:
 - Apple DISK II drive (or compatible - during development Teac FD-55A was used) with 140/160KB storage capacity
 - Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560
-- Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for arduino board
-- Required wiring between Arduino and disk drive: 
-- -> 4 wires for track motor control (driven by Arduino)
-- -> 1 wire for disk motor enable/disable driven by Arduino)
-- -> 1 wire for disk read/write control (driven by Arduino)
-- -> 1 wire for disk read signal (driven by disk drive)
-- Note that Arduino Mega328 is not supported since treckr SW running on Arduino requires 8KB of onchip RAM 
-- PC interfacing with Arduino via USB. PC needs to support Python 3.5. Only W10 has been tested, but other OS should work as well.
+- Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
+
+## How are the HW components connected to each other?
+[For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested schematic using a custom power supply](schematic/treckr_schematic.pdf)
+
+Required wiring between Arduino and disk drive: 
+- 4 wires for track motor control (driven by Arduino)
+- 1 wire for disk motor enable/disable driven by Arduino)
+- 1 wire for disk read/write control (driven by Arduino)
+- 1 wire for disk read signal (driven by disk drive)
+Note that Arduino Mega328 is **not** supported since treckr SW running on Arduino requires 8KB of onchip RAM 
+
+PC interfacing with Arduino via USB. PC needs to support Python 3.5. Only W10 has been tested, but other OS should work as well.
 - SW: treckr.py python 3.5 script and arduino SW files
 
-- The Arduino board PIN configuration is as follows:
+## Arduino PIN configuration
+The Arduino board PIN configuration is as follows:
 
  - PIN 2:  drive read signal
  - PIN 22: drive write request (discriminate read/write)
@@ -35,12 +42,13 @@ To be able to read DOS 3.3 disks and store them on a PC host via USB, the follow
   
  This PIN configuration can be changed in the Arduino SW if needed.
   
-Power supply. The following choices are suggested:
+## Disk drive power supply  
+The following choices are suggested:
 
 a) use original Apple II computer (or clone) power supply. 
    The required voltages can be obtained from one of the two pin headers of the disk interface card.
    Pay attention to the pin header pin-out. Check the signals with a multimeter.
-b) use/develop custom power supply. The required voltages are: +12V, -12V and +5V. 
+b) use/develop [custom power supply](schematic/treckr_schematic.pdf). The required voltages are: +12V, -12V and +5V. 
    
 For prototyping, option b) was used. A standard power supply (18W) providing 15V DC output has been chosen. 
 The +12V and +5V rails can be generated easily using 7812 and 7805 voltage regulators and additional capacitors for input/output. 
@@ -56,6 +64,7 @@ NOTE: Before enabling the power supply to the drive and connecting the drive con
       Treckr is not designed to modify the disk content. However, it is strongly recommended to write protect disks before
       inserting them in the drive.
 
+## Software Description
 The general concept of treckr is shortly described as follows:
 - The Arduino board interfaces with the drive. It sends commands to power on/off the drive, set read mode and move the track stepping motor.
 - For reading the disk content, the drive read signal is connected to an Arduino external interrupt PIN.
@@ -92,7 +101,8 @@ The general concept of treckr is shortly described as follows:
   Enjoy reading your old disks and boot them in an emulator! There may be some very nice stuff to be digged out :-)
   
 Note: treckr only supports reading DOS 3.3 disks. Writing is not supported.
-  
+
+## Related literature
 The following books were considered very helpful:
 - Jim Sathers, Understanding the Apple II, 1983, Quality SW, ISBN 0-912985-01-1 
   (online copy available  -> detailed info on disk drive connector pin-out can be found here)
