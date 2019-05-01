@@ -13,12 +13,12 @@ Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega256
 ## Which equipment is needed?
 To be able to read DOS 3.3 disks and store them on a PC host via USB, the following equipment is needed:
 - Apple DISK II drive (or compatible - during development Teac FD-55A was used) with 140/160KB storage capacity
-- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C](treckr/) files need to be installed here.
+- Arduino Mega2560 (or compatible) board with Atmel MPU ATmega2560; [treckr C](https://github.com/eedede/treckr/treckr/) files need to be installed here.
 - Power supply to provide +12V, -12V, +5V and GND to disk drive; 12V power supply for Arduino board
 - Host PC with Arduino IDE and python 3.5 installed
 
 ## How are the HW components connected to each other?
-For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.pdf) using a custom power supply. The overall HW tool kit used during development is shown [here](schematic/treckr_hw_pic.jpg).
+For connecting the 20-pin HW drive connector to the Arduino board, please have a look at the suggested [schematic](schematic/treckr_schematic.jpg) using a custom power supply. The overall HW tool kit used during development is shown [here](schematic/treckr_hw_pic.jpg).
 
 Required wiring between Arduino and disk drive: 
 - 4 wires for track motor control (driven by Arduino)
@@ -48,9 +48,9 @@ The following choices are suggested:
 - use original Apple II computer (or clone) power supply. 
    The required voltages can be obtained from one of the two pin headers of the disk interface card.
    Pay attention to the pin header pin-out. Check the signals with a multimeter.
-- use/develop [custom power supply](schematic/treckr_schematic.pdf). The required voltages are: +12V, -12V and +5V. 
+- use/develop [custom power supply](schematic/treckr_schematic.jpg). The required voltages are: +12V, -12V and +5V. 
    
-For prototyping, option b) was used. A standard power supply (18W) providing 15V DC output has been chosen. 
+For prototyping, the second option was used. A standard power supply (18W) providing 15V DC output has been chosen. 
 The +12V and +5V rails can be generated easily using 7812 and 7805 voltage regulators and additional capacitors for input/output. 
 Note that decent heat sinks are needed, in particular for the 5V rail feeding the disk drive logic even when the motor is powered off.
 The negative voltage (-12V) was realized using a charge pump DC->DC converter, such as IC7662A.
