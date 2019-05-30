@@ -6,7 +6,7 @@ Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega256
   treckr: Retro tool to read Apple II DOS 3.3 formatted 5.25 inch disks using disk drive, Arduino board and host PC.
           Designed for (former) Apple II hobby enthusiasts who would like to recover private disk content.
 
-  Version: 0.1  - March 2019 - Eckhard Delfs
+  Version: 0.5  - May 30, 2019 - Eckhard Delfs
 
 ------------------------------------------------------------------------------------------------------------------------------
 
