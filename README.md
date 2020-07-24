@@ -1,5 +1,5 @@
 # treckr
-Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega2560 and store it on a host PC
+Retro tool to read Apple II formatted DOS 3.3 disk content using Arduino Mega2560 and store it via USB on a host PC
 
 ------------------------------------------------------------------------------------------------------------------------------
 
